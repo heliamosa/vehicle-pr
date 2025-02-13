@@ -115,7 +115,8 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          parseInt(answers.towingCapacity)
+          parseInt(answers.towingCapacity),
+          []
         );
         this.vehicles.push(truck);
         this.selectedVehicleVin = truck.vin;
@@ -142,7 +143,8 @@ class Cli {
           answers.model,
           parseInt(answers.year),
           parseInt(answers.weight),
-          parseInt(answers.topSpeed)
+          parseInt(answers.topSpeed),
+        []
         );
         this.vehicles.push(motorbike);
         this.selectedVehicleVin = motorbike.vin;
@@ -208,7 +210,7 @@ class Cli {
             break;
           case "Tow another vehicle":
             if (vehicle instanceof Truck) {
-              this.findVehicleToTow(vehicle);
+              // this.findVehicleToTow(vehicle);
               return;
             } else {
               console.log("Only trucks can tow vehicles!");
@@ -216,7 +218,7 @@ class Cli {
             break;
           case "Perform a wheelie":
             if (vehicle instanceof Motorbike) {
-              vehicle.wheelie();
+              // vehicle.wheelie();
             } else {
               console.log("Only motorbikes can perform a wheelie!");
             }
